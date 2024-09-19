@@ -3,11 +3,10 @@ import test from 'node:test'
 import assert from 'node:assert'
 import { TaxIDPro } from '../src'
 
-const tip = new TaxIDPro({ apiKey: process.env.API_KEY || '' })
+const taxidpro = new TaxIDPro({ apiKey: process.env.API_KEY || '' })
 
 test('validate', async () => {
-  const res = await tip.validate({ country: 'au', tin: '92873837267', type: 'entity' })
-  console.log(res)
+  const res = await taxidpro.validate({ country: 'au', tin: '92873837267', type: 'entity' })
   assert.strictEqual(res.is_valid, true)
   assert.strictEqual(res.message, null)
   assert.strictEqual(res.tin_compact, '92873837267')
@@ -17,8 +16,7 @@ test('validate', async () => {
 })
 
 test('lookup', async () => {
-  const res = await tip.lookup({ country: 'au', tin: '49004028077' })
-  console.log(res)
+  const res = await taxidpro.lookup({ country: 'au', tin: '49004028077' })
   assert.strictEqual(res.is_valid, true)
   assert.strictEqual(res.message, null)
   assert.strictEqual(res.tin_compact, '49004028077')

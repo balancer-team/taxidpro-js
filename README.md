@@ -17,9 +17,9 @@ Provide your API key to the `TaxIdPro` constructor. You can obtain an API key by
 ```ts
 import { TaxIdPro } from '@balancer-team/taxidpro'
 
-const tip = new TaxIdPro({ apiKey: 'YOUR_API_KEY' })
+const taxidpro = new TaxIdPro({ apiKey: 'YOUR_API_KEY' })
 
-const validationResult = await tip.validate({
+const validationResult = await taxidpro.validate({
   country: 'au',
   tin: '92873837267',
   type: 'entity',
@@ -36,7 +36,7 @@ const validationResult = await tip.validate({
 //   "format_name": "Business Number"
 // }
 
-const lookupResult = await tip.lookup({
+const lookupResult = await taxidpro.lookup({
   country: 'au',
   tin: '49004028077',
 })
