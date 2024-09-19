@@ -1,4 +1,4 @@
-# Tax ID Validation Client
+# Tax ID Validation Library
 
 Tax ID Pro allows you to quickly integrate tax ID validation into your existing applications and workflows. You can validate over 200 different tax ID formats for over 100 countries. Tax ID Pro ensures your system can handle the diverse tax identification needs of your international customer base.
 
