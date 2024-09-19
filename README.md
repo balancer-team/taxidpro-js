@@ -12,10 +12,10 @@ npm install @balancer-team/taxidpro
 
 ### Usage
 
-Provide your API key to the `TaxIdPro` constructor. You can obtain an API key by signing up at [Tax ID Pro](https://taxid.pro/).
+Provide your API key to the `TaxIDPro` constructor. You can obtain an API key by signing up at [Tax ID Pro](https://taxid.pro/).
 
 ```ts
-import { TaxIdPro } from '@balancer-team/taxidpro'
+import { TaxIDPro } from '@balancer-team/taxidpro'
 
 const taxidpro = new TaxIDPro({ apiKey: 'YOUR_API_KEY' })
 
