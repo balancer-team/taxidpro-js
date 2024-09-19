@@ -26,10 +26,6 @@ type LookupResponse = ValidateResponse & {
   }
 }
 
-type BadResponse = {
-  detail: string
-}
-
 export class TaxIDPro {
   readonly apiKey: string
 

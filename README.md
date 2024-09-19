@@ -7,7 +7,7 @@ Lookup is available for VAT Numbers from the European Union (EU), plus the Unite
 ### Install
 
 ```bash
-npm install @balancer-team/taxidpro
+npm i @balancer-team/taxidpro
 ```
 
 ### Usage
