@@ -1,6 +1,6 @@
 {
   "name": "@balancer-team/taxidpro",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tax ID Pro JavaScript Client",
   "main": "dist/index.js",
   "scripts": {
