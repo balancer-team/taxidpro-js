@@ -17,7 +17,7 @@ Provide your API key to the `TaxIdPro` constructor. You can obtain an API key by
 ```ts
 import { TaxIdPro } from '@balancer-team/taxidpro'
 
-const taxidpro = new TaxIdPro({ apiKey: 'YOUR_API_KEY' })
+const taxidpro = new TaxIDPro({ apiKey: 'YOUR_API_KEY' })
 
 const validationResult = await taxidpro.validate({
   country: 'au',
