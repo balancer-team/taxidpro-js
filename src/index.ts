@@ -1,4 +1,4 @@
-import { BASE_URL, VALIDATE_ENDPOINT, LOOKUP_ENDPOINT } from './constants'
+import { BASE_URL } from './constants'
 
 type TaxIDProOptions = {
   apiKey: string
@@ -30,14 +30,11 @@ export class TaxIDPro {
   readonly apiKey: string
 
   constructor({ apiKey }: TaxIDProOptions) {
-    if (typeof apiKey !== 'string') {
-      throw new Error('apiKey must be a string')
-    }
     this.apiKey = apiKey
   }
 
   async validate({ country, tin, type = 'any' }: ValidateOptions): Promise<ValidateResponse> {
-    const res = await fetch(`${BASE_URL}${VALIDATE_ENDPOINT}?country=${country}&tin=${tin}&type=${type}`, {
+    const res = await fetch(`${BASE_URL}/validate?country=${country}&tin=${tin}&type=${type}`, {
       headers: { Authorization: `Bearer ${this.apiKey}` },
     })
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status} detail: ${await res.text()}`)
@@ -47,7 +44,7 @@ export class TaxIDPro {
 
   async lookup({ country, tin, type = 'vat' }: ValidateOptions): Promise<LookupResponse> {
     if (type !== 'vat') throw new Error('lookup type must be vat')
-    const res = await fetch(`${BASE_URL}${LOOKUP_ENDPOINT}?country=${country}&tin=${tin}&type=${type}`, {
+    const res = await fetch(`${BASE_URL}/lookup?country=${country}&tin=${tin}&type=${type}`, {
       headers: { Authorization: `Bearer ${this.apiKey}` },
     })
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status} detail: ${await res.text()}`)
